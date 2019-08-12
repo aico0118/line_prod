@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>上架商品</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css'>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+<!-- 引入样式 -->
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+
+<div id="app" class="p-4" style="overflow: hidden;    height: 100vh;">
+  <h4 style="color: #26acef;
+  letter-spacing: 2px;
+  line-height: 40px;">商品列表</h4>
+  <div>
+      <el-button
+      size="mini"
+      type="success"  @click="open(-1)">新增</el-button>
+    <el-table
+    :data="tableData">
+    <el-table-column
+      fixed
+      prop="pic"
+      label="商品圖片"
+      width="100">
+      <template slot-scope="scope">
+        <img style="object-fit: cover; height: 50px; width: 50px;" :src="scope.row.pic">
+      </template>
+    </el-table-column>
+    <el-table-column
+      prop="name"
+      label="商品名稱"
+      width="140">
+    </el-table-column>
+    <el-table-column
+      prop="price"
+      label="價格"
+      width="120">
+    </el-table-column>
+    <el-table-column
+      prop="count"
+      label="數量"
+      width="120">
+    </el-table-column>
+    <el-table-column
+      prop="desc"
+      label="描述"
+      width="300">
+    </el-table-column>
+    <el-table-column
+    prop="date"
+    label="新增日期"
+    width="120">
+  </el-table-column>
+    <el-table-column
+      fixed="right"
+      label="操作"
+      width="180">
+      <template slot-scope="scope">
+          <el-button
+          size="mini"
+          type="danger"
+          @click.native.prevent="deleteRow(scope.$index, tableData)">删除</el-button>
+        </el-button>
+        <el-button
+          size="mini"
+          @click="open(scope.$index)">編輯</el-button>
+      </template>
+    </el-table-column>
+  </el-table>
+  </div>
+  
+
+</div>
+
+<!-- partial -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js'></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+
+<script  src="./script.js"></script>
+
+</body>
+</html>

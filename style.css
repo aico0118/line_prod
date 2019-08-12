@@ -1,0 +1,29 @@
+*{
+  margin:0px;
+  padding:0px;
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+
+.el-table th>.cell {
+  letter-spacing: 2px;
+}
+
+
+#dis-card-img{
+  background-size: cover;
+  background-position: center;
+  height: 120px;
+  width:120px;
+  font-size:12px;
+  cursor: pointer;
+}
+
+#dis-card-img:hover{
+  opacity: .7;
+}
+
+
+textarea {
+  resize: none;
+}

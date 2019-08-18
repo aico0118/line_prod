@@ -45,6 +45,15 @@ label{
   color:gray;
 }
 
+
+button{
+  outline: none !important;
+}
+
 button:active{
+  outline: none;
+}
+
+button:hover{
   outline: none;
 }

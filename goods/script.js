@@ -57,5 +57,38 @@ var app = new Vue({
     currentData(){
       return this.prods[this.id];
     }
+  },
+  methods:{
+    goPay(){
+      let param = {
+        "productName":this.currentData.name,
+        "productImageUrl":this.currentData.src,
+        "amount":this.currentData.price,
+        "currency":"TWD",
+        "confirmUrl":"https://aico0118.github.io/line_prod/goods/?id="+this.id,
+        "orderId":"0001"
+      };
+      let settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://line.bean.tw/api/LineAt/LinePay",
+        "method": "POST",
+        "headers": {
+          "charset": "UTF-8",
+          "x-line-channelid": "1609572379",
+          "x-line-channelsecret": "ce4127f3f478e91c92c20462bdbe79b9",
+          "content-type": "application/json",
+          "cache-control": "no-cache",
+          "postman-token": "b5524503-724d-762b-ab86-be4e8571c231"
+        },
+        "processData": false,
+        "data": JSON.stringify(param)
+      }
+      
+      $.ajax(settings).done(function (response) {
+        debugger;
+        window.location.href = response.info.paymentUrl.web;
+      });
+    }
   }
 });

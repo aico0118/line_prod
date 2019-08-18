@@ -59,7 +59,16 @@ var app = new Vue({
     }
   },
   methods:{
+    goShare(){
+      let content  = encodeURI(`來自蛋糕小舖🍰的「${this.currentData.name}」產品❤️
+      立刻查看>>
+      https://aico0118.github.io/line_prod/goods/?id=${this.id}`);
+      window.location = "line://msg/text/?"+content;
+    },
     goPay(){
+      const loading = this.$loading({
+        lock: true
+      });
       let param = {
         "productName":this.currentData.name,
         "productImageUrl":this.currentData.src,
@@ -86,12 +95,8 @@ var app = new Vue({
       }
       
       $.ajax(settings).done(function (response) {
-        alert('test00');
+        loading.close();
         window.location = response.info.paymentUrl.web;
-        location.href = response.info.paymentUrl.web;
-      })
-      .error(function(response){
-        alert('test01');
       });
     }
   }

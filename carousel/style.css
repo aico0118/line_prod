@@ -1,0 +1,45 @@
+*{
+  margin:0px;
+  padding:0px;
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+.card-img-top {
+  height: 268px;
+  object-fit: cover;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+ 
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #cecbcb;
+}
+
+textarea {
+  resize: none;
+}
+
+label{
+  font-size: 14px;
+  font-weight: 600;
+}
+
+#dis-card-img{
+  background-size: cover;
+  background-position: center;
+  height: 120px;
+  width:120px;
+  font-size:12px;
+}
+
+#dis-card-img:hover{
+  opacity: .7;
+}

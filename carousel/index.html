@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>輪播列表編輯器</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css'>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+<!-- 引入样式 -->
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+
+<div id="app" class="d-flex" style="overflow: hidden;    height: 100vh;">
+  <div class="px-5 py-4" style="min-width: 550px;">
+      <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">輪播項目標題</label>
+            <input  v-model="title" type="email" class="form-control form-control-sm" id="exampleInputEmail1" aria-describedby="emailHelp">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">輪播項目內容</label>
+            <textarea v-model="text" class="form-control form-control-sm" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+          <div class="form-group">
+              <label for="exampleInputEmail1">連結文字</label>
+              <input type="email" class="form-control form-control-sm" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+          <div class="form-group">
+              <label for="exampleInputPassword1">連結網址</label>
+              <div class="input-group input-group-sm">
+                 <div class="input-group-prepend">
+                   <div class="input-group-text">https://</div>
+                 </div>
+                 <input type="text" class="form-control" id="inlineFormInputGroupUsername">
+               </div>
+            </div>
+          <label>圖片</label>
+          <input id="card-img" class="d-none" type="file"  @change="readFile"/>
+          <label for="card-img" id="dis-card-img" class="align-items-center bg-light border bordered d-flex flex-column justify-content-center mb-3 rounded" 
+          :style="imgCss" >
+              <i class="el-icon-circle-plus-outline" style="
+      font-size: 30px;
+  "></i>
+  <div>點我上傳圖片</div>
+           </label>
+           <button type="button" class="btn btn-success" @click="addCard">新增</button>
+        
+        </form>
+        
+  
+  </div>
+  <div style="overflow: auto;max-width: calc(100vw - 550px);min-width: calc(100vw - 550px);" class="bg-light scroll-area">
+      <div class="d-flex my-4">
+          <div v-for="card in cards"   style="min-width: 380px;max-width: 380px;">
+            <div class="card mx-3">
+            <img :src="card.src" class="card-img-top" alt="...">
+            <div class="card-body">
+               <h5 class="card-title"><strong>{{card.title}}</strong></h5>
+              <p class="card-text">{{card.text}}</p>
+            </div>
+            <div class="card-body text-center border-top">
+                <a href="#" class="card-link">立刻購買❤</a>
+            </div>
+               </div>
+          </div>
+          </div>
+  </div>
+
+</div>
+
+<!-- partial -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js'></script>
+
+<script  src="./script.js"></script>
+
+</body>
+</html>

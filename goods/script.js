@@ -47,9 +47,9 @@ var app = new Vue({
     },
     id(){
       let url = location.href;
+      let id = "";
       if(url.indexOf('?')!=-1)
       {
-          let id = "";
           //在此直接將各自的參數資料切割放進ary中
           let ary = url.split('?')[1].split('&');
           //此時ary的內容為：

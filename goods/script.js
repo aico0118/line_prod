@@ -46,7 +46,7 @@ var app = new Vue({
       return this.prods[this.id];
     },
     id(){
-      let url = location.href;
+      let url = window.location.search;
       let id = "";
       if(url.indexOf('?')!=-1)
       {

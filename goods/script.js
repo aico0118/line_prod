@@ -43,13 +43,11 @@ var app = new Vue({
   },
   computed:{
     id(){
-      let url = window.location;
+      let url = new URLSearchParams(window.location.search).toString();
       alert(url);
       let id = "";
-      if(url.indexOf('?')!=-1)
-      {
           //在此直接將各自的參數資料切割放進ary中
-          let ary = url.split('?')[1].split('&');
+          let ary = url.split('&');
           //此時ary的內容為：
           //ary[0] = 'id=U001'，ary[1] = 'name=GQSM'
           
@@ -60,8 +58,6 @@ var app = new Vue({
               if(ary[i].split('=')[0] == 'id')
                   id = ary[i].split('=')[1];
           }
-          
-      }
       return id;
     },
     currentData(){

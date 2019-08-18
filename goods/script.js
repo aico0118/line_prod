@@ -61,9 +61,9 @@ var app = new Vue({
   methods:{
     goShare(){
       let content  = encodeURI(`來自蛋糕小舖🍰的「${this.currentData.name}」產品❤️
-      立刻查看>>
-      https://aico0118.github.io/line_prod/goods/?id=${this.id}`);
-      window.location = "line://msg/text/?"+content;
+立刻查看>>
+line://app/1564272592-E8zDZG6B?id=${this.id}`);
+      window.open = "line://msg/text/?"+content;
     },
     goPay(){
       const loading = this.$loading({

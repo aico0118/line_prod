@@ -89,6 +89,9 @@ var app = new Vue({
         alert('test00');
         window.location = response.info.paymentUrl.web;
         location.href = response.info.paymentUrl.web;
+      })
+      .error(function(response){
+        alert('test01');
       });
     }
   }

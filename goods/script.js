@@ -42,11 +42,9 @@ var app = new Vue({
     ]
   },
   computed:{
-    currentData(){
-      return this.prods[this.id];
-    },
     id(){
-      let url = window.location.search;
+      let url = window.location;
+      alert(url);
       let id = "";
       if(url.indexOf('?')!=-1)
       {
@@ -65,6 +63,9 @@ var app = new Vue({
           
       }
       return id;
+    },
+    currentData(){
+      return this.prods[this.id];
     }
   }
 });

@@ -5,68 +5,66 @@ var getTodoState = function(item) {
   }
   return "active";
 };
+
 var app = new Vue({
   el: "#app",
   data: {
-    cards: [
+    prods: [
       {
-        title: "綜合甜甜圈組合",
-        text: "鬆軟麵團X精選醬料，蹦出全新滋味！",
-        src: "https://i.imgur.com/aT8ZxEc.jpg"
+        name: "綜合甜甜圈組合",
+        desc: 
+        `鬆軟麵團X精選醬料，蹦出全新滋味！<br>
+        經典巧克力Ｘ１<br>
+        無敵大草莓Ｘ１<br>
+        甜蜜脆焦糖Ｘ１<br>
+        香濃蜜肉桂Ｘ１<br>
+        各一入`,
+        src: "https://i.imgur.com/aT8ZxEc.jpg",
+        price:120,
+        score:4.9
       },
       {
-        title: "鬆餅飲料組合",
-        text: "基本口味鬆餅 X 40元以下飲料",
-        src: "https://i.imgur.com/RR3IKuX.jpg"
-      }
-    ],
-    currentTab: "all",
-    todos: [
+        name: "鬆餅飲料組合",
+        desc: "基本口味鬆餅 X 40元以下飲料",
+        src: "https://i.imgur.com/RR3IKuX.jpg",
+        price:79,
+        score:4.3
+      },
       {
-        id: 123,
-        title: "測試",
-        completed: false
+        name: "傳情寫意糖霜餅乾",
+        desc: 
+        `可客製化文字/圖形`,
+        src: "https://i.imgur.com/BW55rd9.jpg",
+        price:189,
+        score:4.6
       }
-    ],
-    title: "",
-    text: "",
-    src: "",
-    cacheToDo: {},
-    cacheTitle: "",
-    currentSrc: "",
-    imgCss:{
-      "color": "gray"
-    }
+     
+    ]
   },
-  methods: {
-    addCard() {
-      let vm = this;
-      vm.cards.push({
-        text: vm.text,
-        title: vm.title,
-        src: vm.currentSrc
-      });
-      this.text = "";
-      this.title = "";
-      $('.scroll-area').animate({scrollLeft:'+=380'}, 600, "swing");
-      Vue.set(vm.imgCss, "backgroundImage", "");
-      Vue.set(vm.imgCss, "color", "gray");
-      Vue.set(vm.imgCss, "textShadow", "");
+  computed:{
+    currentData(){
+      return this.prods[this.id];
     },
-    readFile(e) {
-      let vm = this;
-      if (e.currentTarget.files && e.currentTarget.files[0]) {
-        var FR= new FileReader();
-        FR.addEventListener("load", function(e) {
-          vm.currentSrc = e.target.result;
-          Vue.set(vm.imgCss, "backgroundImage", "url('"+e.target.result+"')");
-          Vue.set(vm.imgCss, "color", "white");
-          Vue.set(vm.imgCss, "textShadow", "1px 1px 7px black");
-        }); 
-        
-        FR.readAsDataURL( e.currentTarget.files[0] );
+    id(){
+      let url = location.href;
+      if(url.indexOf('?')!=-1)
+      {
+          let id = "";
+          //在此直接將各自的參數資料切割放進ary中
+          let ary = url.split('?')[1].split('&');
+          //此時ary的內容為：
+          //ary[0] = 'id=U001'，ary[1] = 'name=GQSM'
+          
+          //下迴圈去搜尋每個資料參數
+          for(i=0;i<=ary.length-1;i++)
+          {
+              //如果資料名稱為id的話那就把他取出來
+              if(ary[i].split('=')[0] == 'id')
+                  id = ary[i].split('=')[1];
+          }
+          
       }
+      return id;
     }
-    
   }
 });

@@ -44,3 +44,7 @@ label{
   letter-spacing: 1px;
   color:gray;
 }
+
+button:active{
+  outline: none;
+}

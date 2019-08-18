@@ -44,17 +44,11 @@ var app = new Vue({
   computed:{
     id(){
       let url = new URLSearchParams(window.location.search).toString();
-      alert(url);
       let id = "";
           //在此直接將各自的參數資料切割放進ary中
           let ary = url.split('&');
-          //此時ary的內容為：
-          //ary[0] = 'id=U001'，ary[1] = 'name=GQSM'
-          
-          //下迴圈去搜尋每個資料參數
           for(i=0;i<=ary.length-1;i++)
           {
-              //如果資料名稱為id的話那就把他取出來
               if(ary[i].split('=')[0] == 'id')
                   id = ary[i].split('=')[1];
           }

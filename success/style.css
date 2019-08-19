@@ -115,7 +115,7 @@ button:hover{
 }
 
 .success-icon{
-  font-size: 40vh;
+  font-size: 35vh;
   animation:success 0.5s;
 -moz-animation:success 0.5s; /* Firefox */
 -webkit-animation:success 0.5s;  /* Safari and Chrome */

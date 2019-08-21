@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>購買成功 | 蛋糕小舖</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="./style.css?a=2">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous"></link>
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:300,400,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js'></script>
+  
+  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+  <script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
+
+
+</head>
+<body>
+<div id="app" class="d-flex flex-column align-items-center p-4" style="overflow: hidden; height: 100vh;    background-image: linear-gradient(to bottom, #ffffff 60%, #dee2e6 80%);">
+<button class="btn btn-primary" @click="sendMsg">送出</button>
+  <textarea cols="10"></textarea>
+</div>
+<script  src="./script.js?v=4"></script>
+<script>
+  $(document).ready(function(){
+    liff.init();
+  });
+
+
+</script>
+
+</body>
+</html>

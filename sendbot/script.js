@@ -63,12 +63,8 @@ var app = new Vue({
   },
   methods:{
     sendMsg(){
-      liff.sendMessages([
-        {
-          type:'text',
-          text:'Hello, World!'
-        }
-      ]);
+      let msg = JSON.parse($('#msg').val());
+      liff.sendMessages(msg);
     }
   }
 });

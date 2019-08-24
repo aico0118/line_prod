@@ -5,11 +5,43 @@ var getTodoState = function(item) {
   }
   return "active";
 };
-
+$(document).ready(function(){
+  liff.init();
+});
 var app = new Vue({
   el: "#app",
   mounted:function(){
-    liff.init();
+    
+    let today=new Date();
+    let currentDateTime = `${today.getFullYear()}/${today.getMonth()+1}/${today.getDate()} ${today.getHours()}:${today.getMinutes()}`;
+    let param = {
+      "message" : 
+      `您的商店有新的訂單！
+      時間：${currentDateTime}
+      訂單編號：#001
+      金額：${this.currentData.price}
+      品項：${this.currentData.name}
+      查看訂單明細>>
+      line://app/1564272592-PjAdk6W1
+      `
+    }
+    let settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "https://line.bean.tw/api/LineAt/LineNotify",
+      "method": "POST",
+      "headers": {
+        "charset": "UTF-8",
+        "content-type": "application/json",
+        "cache-control": "no-cache"
+      },
+      "processData": false,
+      "data": JSON.stringify(param)
+    }
+    
+    $.ajax(settings).done(function (response) {
+          
+    });
   },
   data: {
     prods: [

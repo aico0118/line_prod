@@ -74,7 +74,7 @@ line://app/1564272592-E8zDZG6B?id=${this.id}`);
         "productImageUrl":this.currentData.src,
         "amount":this.currentData.price,
         "currency":"TWD",
-        "confirmUrl":"https://aico0118.github.io/line_prod/success?id=" + this.id,
+        "confirmUrl":"https://aico0118.github.io/line_prod/success.html?id=" + this.id,
         "orderId":"0001"
       };
       let settings = {

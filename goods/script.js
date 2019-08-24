@@ -80,7 +80,7 @@ line://app/1564272592-E8zDZG6B?id=${this.id}`);
       let settings = {
         "async": true,
         "crossDomain": true,
-        "url": "https://line.bean.tw/api/LineAt/LinePay",
+        "url": "https://line.bean.tw/api/LineAt/LinePay/GetLinePay",
         "method": "POST",
         "headers": {
           "charset": "UTF-8",

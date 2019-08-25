@@ -13,7 +13,7 @@ var app = new Vue({
   mounted:function(){
     
     let today=new Date();
-    let currentDateTime = `${today.getFullYear()}/${today.getMonth()+1}/${today.getDate()} ${today.getHours()}:${today.getMinutes()}`;
+    let currentDateTime = `${today.getFullYear()}/${today.getMonth()+1}/${today.getDate()} ${today.getHours()}:${today.getMinutes().toString().padStart(2,"0")}`;
     let param = {
       "message" : 
       `您的商店有新的訂單！

@@ -1,0 +1,79 @@
+*{
+  margin:0px;
+  padding:0px;
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+.card-img-top {
+  height: 268px;
+  object-fit: cover;
+}
+
+/*::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+ 
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #cecbcb;
+}*/
+
+textarea {
+  resize: none;
+}
+
+label{
+  font-size: 14px;
+  font-weight: 600;
+}
+
+#dis-card-img{
+  background-size: cover;
+  background-position: center;
+  height: 120px;
+  width:120px;
+  font-size:12px;
+}
+
+#app{
+  letter-spacing: 1px;
+  color:gray;
+}
+
+
+button{
+  outline: none !important;
+}
+
+button:active{
+  outline: none;
+}
+
+button:hover{
+  outline: none;
+}
+
+
+.user-info-number{
+  font-size: 14px;
+}
+
+.days-log{
+  width: 80px;
+  border-right: 1px solid rgb(204, 201, 201);
+  font-weight: 500;
+}
+
+.top-label{
+  font-size: 20px;
+}
+
+.btn-info{
+  background-color: rgb(0, 188, 212);
+  border-color:rgb(0, 188, 212);
+}

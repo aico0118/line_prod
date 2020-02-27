@@ -12,7 +12,7 @@ var app = new Vue({
     sendMsg(){
       try
       {
-       eval( 'var msg = [' +$('#message').val()+'];');   
+       eval( 'var msg = ' +$('#message').val()+';');   
       liff.sendMessages(msg);
 
       }

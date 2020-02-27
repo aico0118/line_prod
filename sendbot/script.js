@@ -12,8 +12,8 @@ var app = new Vue({
     sendMsg(){
       try
       {
-       eval( 'var msg = ' +$('#message').val()+';');   
-      liff.sendMessages(msg);
+       eval( 'var msg = ' +$('#message').val()+' ;');   
+      liff.sendMessages(msg).catch(function(e){alert(e.message);});
 
       }
       catch(e){

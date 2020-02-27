@@ -10,9 +10,16 @@ var app = new Vue({
   el: "#app",
   methods:{
     sendMsg(){
-      eval( 'var msg = ' +$('#message').val()+';');   
+      try
+      {
+       eval( 'var msg = [' +$('#message').val()+'];');   
       liff.sendMessages(msg);
 
+      }
+      catch(e){
+        alert(e.message);
+      }
+     
     }
   }
 });
